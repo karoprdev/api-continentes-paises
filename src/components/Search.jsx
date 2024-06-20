@@ -12,7 +12,7 @@ const Search = ({ searchCountry, setSearchCountry }) => {
         <input
           type="text"
           placeholder="Escribe el país que deseas ver"
-          className="w-full px-3 py-3 border border-gray-300 rounded-3xl focus:outline-none shadow-lg shadow-gray-400"
+          className="w-full text-xs md:text-sm px-3 py-3 border border-gray-300 rounded-3xl focus:outline-none shadow-lg shadow-gray-400"
           value={searchCountry}
           onChange={handleSearchChange}
         />
