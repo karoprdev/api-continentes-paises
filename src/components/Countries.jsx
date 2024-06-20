@@ -1,5 +1,3 @@
-// Countries component (Countries.js)
-
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_COUNTRIES } from "../Queries";
@@ -35,7 +33,7 @@ function Countries({ searchCountry, onCountryClick }) {
   if (loadingCountries) return <p>Cargando...</p>;
   if (errorCountries) return <p>Error: {errorCountries.message}</p>;
 
-  const filteredCountries = dataCountries.countries.filter(country =>
+  const filteredCountries = dataCountries.countries.filter((country) =>
     country.name.toLowerCase().includes(searchCountry.toLowerCase())
   );
 
@@ -57,8 +55,12 @@ function Countries({ searchCountry, onCountryClick }) {
             }}
           >
             <Card
-              sx={{ borderRadius: 4, boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.5)', maxHeight: 400 }}
-              onClick={() => onCountryClick(country)} // Call handler on card click
+              sx={{
+                borderRadius: 4,
+                boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.5)",
+                maxHeight: 400,
+              }}
+              onClick={() => onCountryClick(country)}
             >
               <CardActionArea>
                 {imagesCountries[country.code] && (
@@ -75,7 +77,7 @@ function Countries({ searchCountry, onCountryClick }) {
                     justifyContent: "left",
                     alignItems: "center",
                     padding: 0.5,
-                    backgroundColor: "#62afe2"
+                    backgroundColor: "#62afe2",
                   }}
                 >
                   {imagesCountries[country.code] && (
@@ -92,9 +94,7 @@ function Countries({ searchCountry, onCountryClick }) {
                     component="div"
                     sx={{ textAlign: "left", marginX: 0 }}
                   >
-                    <p className="text-xl font-bold  m-0">
-                      {country.name}
-                    </p>
+                    <p className="text-xl font-bold  m-0">{country.name}</p>
                     <p className="text-current"> {country.continent.name}</p>
                   </Typography>
                 </CardContent>

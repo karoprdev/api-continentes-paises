@@ -6,19 +6,18 @@ import Header from "./components/Header";
 
 function App() {
   const [searchCountry, setSearchCountry] = useState("");
-  
+
   return (
     <>
-      
       <Header
         searchCountry={searchCountry}
         setSearchCountry={setSearchCountry}
-        sx= {{ backgroundColor: "gray"}}
+        sx={{ backgroundColor: "gray" }}
       />
       <Routes>
         <Route path="/" element={"/"} />
-        <Route path="/vista1" element={<Vista1 />} />
-        <Route path="/vista2" element={<Vista2 />} /> 
+        <Route path="/vista1" />
+        <Route path="/vista2" />
       </Routes>
     </>
   );

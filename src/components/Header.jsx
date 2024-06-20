@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
+import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,6 +13,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import SettingsIcon from "@mui/icons-material/Settings";
+import PermDataSettingIcon from "@mui/icons-material/PermDataSetting";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Countries from "./Countries";
@@ -62,13 +63,13 @@ function Header({ window, searchCountry, setSearchCountry }) {
   const drawer = (
     <div className="bg-gray-500">
       <div className="rounded-lg bg-gray-300 text-lg text-center text-gray-500 my-3 mx-6 p-2 font-bold">
-        Logo
+        <a href="/">Logo</a>
       </div>
       <List sx={{ color: "white" }}>
         {[
           { text: "Home", icon: <HomeIcon />, path: "/" },
           { text: "Vista 1", icon: <SettingsIcon />, path: "/vista1" },
-          { text: "Vista 2", icon: <SettingsIcon />, path: "/vista2" },
+          { text: "Vista 2", icon: <PermDataSettingIcon />, path: "/vista2" },
         ].map(({ text, icon, path }) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={() => handleNavigation(path)}>

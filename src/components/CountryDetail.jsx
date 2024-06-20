@@ -45,15 +45,13 @@ function CountryDetail({ country, onClose }) {
             flexDirection: "column",
             position: "absolute",
             right: 1,
-            top: 120,
+            top: 100,
             width: "416px",
             padding: 1,
             zIndex: 1000,
           }}
         >
-          <Box
-            sx={{ display: "flex", justifyContent: "flex-end" }}
-          >
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <CloseIcon color="action" onClick={onClose} />
           </Box>
           <CardActionArea>
@@ -132,7 +130,7 @@ function CountryDetail({ country, onClose }) {
                     <span className="text-blue-500 font-semibold">
                       Ciudades:
                     </span>
-                    {country.states != '' ? (
+                    {country.states != "" ? (
                       <ul className="pl-8 py-2 shadow-lg border border-inherit max-w-52 ml-7">
                         {country.states?.slice(0, 3).map((state, index) => (
                           <li key={index}>{state.name}</li>
