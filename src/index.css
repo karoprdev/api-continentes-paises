@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* global.css */
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
   background-color: rgb(107, 114, 128) !important;
 }
@@ -12,5 +11,8 @@
 }
 
 .css-wf16b5 {
+  background-color: rgb(107, 114, 128) !important;
+}
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
   background-color: rgb(107, 114, 128) !important;
 }

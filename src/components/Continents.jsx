@@ -5,9 +5,8 @@ import { getImages } from "../PixabayApi";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import { Grid } from "@mui/material";
-import Search from "./Search";
 
-function Continents({ searchCountry, setSearchCountry }) {
+function Continents() {
   const {
     loading: loadingContinents,
     error: errorContinents,
@@ -34,14 +33,10 @@ function Continents({ searchCountry, setSearchCountry }) {
 
   return (
     <>
-    <Search
-              searchCountry={searchCountry}
-              setSearchCountry={setSearchCountry}
-            />
-      <div className=" max-w-sm absolute shadow-sm bg-white p-4 top-[5.4rem] right-[29rem]">
+      <div className=" max-w-sm shadow-sm bg-white p-2">
         <div className="flex justify-between">
           <p className="text-gray-500">Filtrar por continente</p>
-          <p className="text-sky-blue font-bold text-blue-600">Limpiar</p>
+          <button className="text-sky-blue font-bold text-blue-600">Limpiar</button>
         </div>
         <Grid container spacing={1} sx={{ marginTop: 1, maxWidth: 360 }}>
           {dataContinents.continents.map((continent) => (
@@ -63,13 +58,12 @@ function Continents({ searchCountry, setSearchCountry }) {
                   borderRadius: 2,
                   boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.5)",
                   maxHeight: 120,
-                  maxWidth: 90,                  
+                  maxWidth: 90,
                   "&:hover": {
                     border: 2.5,
                     borderColor: "#3274f0",
-                  },         
+                  },
                 }}
-                onClick={() => onContinentClick(continent)}
               >
                 {imagesContinents[continent.code] && (
                   <CardMedia
