@@ -46,13 +46,19 @@ function CountryDetail({ country, onClose }) {
             position: "absolute",
             right: 1,
             top: 100,
-            width: "416px",
+            width: {
+              xs: 384,
+              md: 416,
+            },
             padding: 1,
             zIndex: 1000,
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-            <CloseIcon color="action" onClick={onClose} />
+            <CloseIcon
+              color="action"
+              onClick={onClose}
+            />
           </Box>
           <CardActionArea>
             {imagesCountries[country.code] && (
